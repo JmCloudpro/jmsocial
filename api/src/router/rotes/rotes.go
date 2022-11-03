@@ -19,6 +19,7 @@ type Rote struct {
 func Configure(r *mux.Router) *mux.Router {
 	rotes := rotesUsers
 	rotes = append(rotes, rtlogin)
+	rotes = append(rotes, PublicationRotes...) //to add publicatin rotes, its necessry to use tree dots ant the end
 
 	for _, rote := range rotes {
 

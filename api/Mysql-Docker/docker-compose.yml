@@ -1,7 +1,7 @@
 #executar docker compose para subir banco
 #Este docker compose monta o arquivo devbook.sql e executa via command.
 #Docker commands to solve issues:configs:
-#sudo aa-remove-unknown
+#sudo aa-remove-unknown  // removes uknow packages from snap..  dont use
 #sudo netstat -nlpt |grep 3306
 #sudo kill `sudo lsof -t -i:3306`
 #Remove Images:  docker rmi <imageid>
