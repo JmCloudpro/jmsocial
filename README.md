@@ -26,7 +26,7 @@ github.com/joho/godotenv // Pacote utilizado para ler as variaveis de ambiente: 
   
   lembrando que a porta de conexão com a webapp é  8080
   
-  A plicação pode ser acessada no link:  www.jmcloudpro.com/jmsocial
+  
   
   
   
