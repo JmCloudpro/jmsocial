@@ -47,7 +47,40 @@ github.com/joho/godotenv // Pacote utilizado para ler as variaveis de ambiente: 
 
   
   
-  
+ENGLISH VERSION
+JM Social is a fullstack Go application, created during Gustavo Gallego's Go course.
+
+The project is divided into 3 sessions:
+
+*Mysql-Docker: Contains a docker composer script and an initial sql script, with some example data.
+
+*Api: Consists of a back end application, made in Go, using frameworks/Packages: github.com/gorilla/mux // To Create Application Routes github.com/badoux/checkmail // Email validation github.com/ dgrijalva/jwt-go // To convert data to JSON github.com/go-sql-driver/mysql // Mysql driver github.com/joho/godotenv // Package used to read environment variables golang.org/x/crypto //Package used to encrypt and hash passwords.
+
+*Webapp: Frontend interface, made in Go, using features like: github.com/gorilla/mux // Create web server and application routes github.com/gorilla/securecookie // Package used to interact with cookies github.com/joho /godotenv // Package used to read environment variables: .env file from the root of the application
+
+To run the application, perform the following procedures:
+
+1 - Create docker image for the webapp and the api:
+
+TO CREATE API IMAGE:
+  Enter the api directory and run the following command:
+    sudo docker build -t jmsocial-api:latest .
+
+
+TO CREATE WEBAPP IMAGE:
+  Go into the webapp directory and run the following command:
+    sudo docker build -t jmsocial-web:latest .
+
+FOR MYSQL IT IS NOT NECESSARY TO CREATE AN IMAGE;
+
+2 - Start Docker Compose:
+
+Enter from the Mysql-docker directory and run the command:
+  docker compose up
+
+Have in mind that the connection port with the webapp is 8080
+
+http://localhost:8080  
   
   
   
