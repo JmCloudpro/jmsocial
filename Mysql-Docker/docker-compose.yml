@@ -20,10 +20,47 @@
 
 version: '3.9'
 services:
+  webapp:
+    image: jmsocial-web:latest
+    
+    container_name: jmsocial-webapp
+    restart: always
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    depends_on:
+      - db
+      - api
+    links: 
+      - db  
+      - api    
+
+    networks:
+      - jmsocial
+
+
+  api:
+    image: jmsocial-api:latest
+    
+    container_name: jmsocial-api
+    restart: always
+    #ports:
+    #  - '5000'
+    depends_on:
+      - db
+    links: 
+      - db      
+    networks:
+      - jmsocial
+
+
+  
+  
   db:
     image: mysql:latest
     command: mysqld --user=root
-    container_name: jmsocial-db
+    container_name: jmsocial-db-02
     restart: always
     environment:
       MYSQL_DATABASE: 'jmsocial'
@@ -32,17 +69,20 @@ services:
       MYSQL_PASSWORD: 'pwd@123'
 
       MYSQL_ROOT_PASSWORD: 'pwd@123'
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-
+   # ports:
+   #   - '3306'
     volumes:
       - my-db:/var/lib/mysql-dk-xs3x-jm
       - "./jmsocial.sql:/docker-entrypoint-initdb.d/jmsocial.sql"
-    
+      
+    networks:
+      - jmsocial
+
+
 volumes:
   my-db:
-  
 
 
+networks:
+  jmsocial:
+    driver: bridge

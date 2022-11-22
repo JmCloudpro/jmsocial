@@ -28,6 +28,7 @@ func FazerLogin(w http.ResponseWriter, r *http.Request) {
 	url := fmt.Sprintf("%s/login", config.APIURL)
 	response, erro := http.Post(url, "application/json", bytes.NewBuffer(usuario))
 	if erro != nil {
+		fmt.Println(erro)
 		respostas.JSON(w, http.StatusInternalServerError, respostas.ErroAPI{Erro: erro.Error()})
 		return
 	}

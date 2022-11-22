@@ -1,0 +1,11 @@
+FROM golang:1.19 
+#as builder
+WORKDIR /webapp
+COPY . .
+#CGO_ENABLED=0  Disables the use of Lib C
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o server
+
+
+#FROM scratch CD
+#COPY --from=builder /app/server /server
+ENTRYPOINT ["/webapp/server"]

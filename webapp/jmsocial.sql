@@ -43,11 +43,9 @@ CREATE TABLE publicacoes(
 
 insert into usuarios (nome, nick, email, senha)
 values
-("teste", "teste", "teste@gmail.com", "$2a$10$/ELzLfBm0rLvML0sybB6C.MIrcKNOkSgjVHegBxPZ5ia2UDEb/6Sa"), -- teste
 ("jmario 1", "jmario_1", "jmario1@gmail.com", "$2a$10$0iGYlKCAYTyJV/vC6nLGgeWFwD6AhSkWLsVRO/.M4lNK8OtIkfggy"), -- jmario1
 ("jmario 2", "jmario_2", "jmario2@gmail.com", "$2a$10$0iGYlKCAYTyJV/vC6nLGgeWFwD6AhSkWLsVRO/.M4lNK8OtIkfggy"), -- jmario2
 ("jmario 3", "jmario_3", "jmario3@gmail.com", "$2a$10$0iGYlKCAYTyJV/vC6nLGgeWFwD6AhSkWLsVRO/.M4lNK8OtIkfggy"); -- jmario3
-
 
 insert into seguidores(usuario_id, seguidor_id)
 values

@@ -1,0 +1,6 @@
+FROM golang:1.19 
+WORKDIR /app
+COPY . .
+#CGO_ENABLED=0  Disables the use of Lib C
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o server
+ENTRYPOINT ["/app/server"]
